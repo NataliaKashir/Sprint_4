@@ -16,10 +16,10 @@ class FormPageForWhomScooter(BasePageScooter):
         self.driver.find_element(*order_address).send_keys(address)
         self.driver.find_element(*order_phone).send_keys(phone)
         self.driver.find_element(*order_metro).click
-        # без данных действий иногда не отрабатывает скрипт по выпадающему списку по причине долгой загрузки странички (у меня)
+        # не убираю ожидание, но просто send_keys в метро не работают, пока не выберешь элемент.
+        # Вынуждена оставить выбор элемента и ожидание, т.к., может быть, причина в моей проблеме с сетью.
         time.sleep(1)
         self.driver.find_element(*order_metro).send_keys(text_metro)
-
         WebDriverWait(self.driver, 10).until(expected_conditions.visibility_of_element_located(metro))
         self.driver.find_element(*metro).click()
 
