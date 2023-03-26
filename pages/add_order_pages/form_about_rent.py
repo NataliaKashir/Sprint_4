@@ -2,19 +2,11 @@ import allure
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 from test_data import *
+from pages.base_page import *
 
-class FormPageAboutRentScooter:
-
+class FormPageAboutRentScooter(BasePageScooter):
     def __init__(self, driver):
-        self.driver = driver
-
-    @allure.step('Ожидаем загрузку страницы Про аренду')
-    def wait_for_load_add_order_about_rent_page(self):
-        WebDriverWait(self.driver, 10).until(expected_conditions.presence_of_element_located(order_btn))
-
-    @allure.step('Ожидаем появление окна страницы Хотите оформить заказ?')
-    def wait_confirmation_order_window(self):
-        WebDriverWait(self.driver, 10).until(expected_conditions.presence_of_element_located(order_btn_confirm))
+        super().__init__(driver)
 
     @allure.step('Заполняем форму Про аренду')
     def fill_order_scooter_about_rent_form(self, text_date, days, color, comment):

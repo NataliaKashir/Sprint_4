@@ -28,4 +28,6 @@ class BasePageScooter:
     def wait_for_visibility_bottom_order_btn(self):
         WebDriverWait(self.driver, 3).until(expected_conditions.visibility_of_element_located(MPB.order_scooter_bottom_btn))
 
-
+    @allure.step('Ожидаем загрузку элемента {element}')
+    def wait_for_load_element(self, element):
+        WebDriverWait(self.driver, 10).until(expected_conditions.presence_of_element_located(element))

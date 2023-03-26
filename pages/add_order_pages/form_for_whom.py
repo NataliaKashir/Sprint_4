@@ -3,15 +3,11 @@ import time
 from locators.add_order_locator.form_for_whom_locator import *
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
+from pages.base_page import *
 
-class FormPageForWhomScooter:
-
+class FormPageForWhomScooter(BasePageScooter):
     def __init__(self, driver):
-        self.driver = driver
-
-    @allure.step('Ожидание загрузки формы Для кого самокат')
-    def wait_for_load_add_order_for_whom_page(self):
-        WebDriverWait(self.driver, 10).until(expected_conditions.presence_of_element_located(order_phone))
+        super().__init__(driver)
 
     @allure.step('Заполнение формы Для кого самокат')
     def fill_order_scooter_for_whom_form(self, name, surname, address, metro, text_metro, phone):

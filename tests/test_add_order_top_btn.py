@@ -49,7 +49,7 @@ class TestAddOrderTopBtnScooter:
         for_whom = FormPageForWhomScooter(driver)
         about_rent = FormPageAboutRentScooter(driver)
         for_whom.click_order_scooter_for_whom_form_next_btn()
-        about_rent.wait_for_load_add_order_about_rent_page()
+        about_rent.wait_for_load_element(order_btn)
         about_rent.fill_order_scooter_about_rent_form(text_date, days, color, comment)
 
         actually_date_value = about_rent.get_about_rent_form_date()
@@ -63,7 +63,7 @@ class TestAddOrderTopBtnScooter:
         assert actually_comment_value == comment, f'Ожидалось что поле Комментарий будет содержать {comment}, получено {actually_comment_value}'
 
         about_rent.click_about_rent_form_order_btn()
-        about_rent.wait_confirmation_order_window()
+        about_rent.wait_for_load_element(order_btn_confirm)
         about_rent.click_order_btn_confirm()
         actually_ordered_header = about_rent.get_ordered_popup_window_header()
         assert "Заказ оформлен" in actually_ordered_header, f'Ожидалось что окно подтверждения создания заказа будет содержать "Заказ оформлен", получено {actually_ordered_header}'

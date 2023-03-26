@@ -1,6 +1,7 @@
 import allure
 from locators.main_page_locator import MainPageQuestionsElements as MPQ
 from locators.main_page_locator import MainPageHeaderElements as MPH
+from locators.main_page_locator import MainPageBottomElements as MPB
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
@@ -127,4 +128,4 @@ class MainPageScooter:
 
     @allure.step('Клик по нижней кнопке Заказать')
     def click_bottom_order_btn(self):
-        self.driver.find_element(*MPH.order_scooter_bottom_btn).click()
+        self.driver.find_element(*MPB.order_scooter_bottom_btn).click()
