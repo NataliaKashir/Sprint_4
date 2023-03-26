@@ -7,7 +7,6 @@ from selenium import webdriver
 @allure.step('Закрываем браузер')
 @pytest.fixture
 def driver():
-    # driver = webdriver.Chrome()
     driver = webdriver.Firefox()
     yield driver
 
