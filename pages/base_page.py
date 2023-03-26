@@ -20,14 +20,6 @@ class BasePageScooter:
         # ставлю ожидание 10, потому что Яндекс Самокат открывается оооочень долго в Firefix (у меня)
         WebDriverWait(self.driver, 10).until(expected_conditions.presence_of_element_located(question_7))
 
-    @allure.step('Клик по верхней кнопке Заказать')
-    def click_top_order_btn(self):
-        self.driver.find_element(*order_scooter_top_btn).click()
-
-    @allure.step('Клик по нижней кнопке Заказать')
-    def click_bottom_order_btn(self):
-        self.driver.find_element(*order_scooter_bottom_btn).click()
-
     @allure.step('Скролл до нижней кнопки Заказать')
     def scroll_to_bottom_order_btn(self):
         bottom_btn = self.driver.find_element(*order_scooter_bottom_btn)

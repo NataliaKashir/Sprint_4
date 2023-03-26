@@ -12,7 +12,7 @@ class TestMainPageLinksScooter:
         base_page = BasePageScooter(driver)
         base_page.open_main_page()
         base_page.wait_for_load_main_page()
-        base_page.click_top_order_btn()
+        main_page.click_top_order_btn()
         current_url = driver.current_url
         assert current_url == order_page_url, f'Ожидалось что текущий url будет {order_page_url}, получено "{current_url}"'
         main_page.click_logo_scooter()

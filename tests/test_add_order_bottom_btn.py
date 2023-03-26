@@ -3,6 +3,7 @@ import allure
 from pages.add_order_pages.form_for_whom import *
 from pages.add_order_pages.form_about_rent import *
 from pages.base_page import *
+from pages.main_page import *
 from test_data import *
 
 class TestAddOrderBottomBtnScooter:
@@ -12,12 +13,13 @@ class TestAddOrderBottomBtnScooter:
     @pytest.mark.parametrize('order_test_data', order_test_data_list)
     def test_add_order_bottom_btn(self, driver, order_test_data):
         base_page = BasePageScooter(driver)
+        main_page = MainPageScooter(driver)
         for_whom = FormPageForWhomScooter(driver)
         base_page.open_main_page()
         base_page.wait_for_load_main_page()
         base_page.scroll_to_bottom_order_btn()
         base_page.wait_for_visibility_bottom_order_btn()
-        base_page.click_bottom_order_btn()
+        main_page.click_bottom_order_btn()
         # переменные тестового набора данных заказа
         name = order_test_data['name']
         surname = order_test_data['surname']

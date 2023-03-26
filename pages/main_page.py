@@ -120,3 +120,11 @@ class MainPageScooter:
     @allure.step('Клик по надписи Яндекс в логотипе')
     def click_logo_yandex(self):
         self.driver.find_element(*logo_yandex).click()
+
+    @allure.step('Клик по верхней кнопке Заказать')
+    def click_top_order_btn(self):
+        self.driver.find_element(*order_scooter_top_btn).click()
+
+    @allure.step('Клик по нижней кнопке Заказать')
+    def click_bottom_order_btn(self):
+        self.driver.find_element(*order_scooter_bottom_btn).click()
