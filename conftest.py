@@ -3,8 +3,7 @@ import allure
 from selenium import webdriver
 
 
-@allure.step('Открываем браузер')
-@allure.step('Закрываем браузер')
+@allure.title('Открываем/Закрываем браузер')
 @pytest.fixture
 def driver():
     driver = webdriver.Firefox()
