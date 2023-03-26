@@ -6,7 +6,6 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 class FormPageForWhomScooter:
 
-    # конструктор класса
     def __init__(self, driver):
         self.driver = driver
 

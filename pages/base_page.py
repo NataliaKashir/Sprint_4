@@ -7,7 +7,6 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 class BasePageScooter:
 
-    # конструктор класса
     def __init__(self, driver):
         self.driver = driver
 

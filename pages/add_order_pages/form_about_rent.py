@@ -5,7 +5,6 @@ from test_data import *
 
 class FormPageAboutRentScooter:
 
-    # конструктор класса
     def __init__(self, driver):
         self.driver = driver
 
@@ -22,7 +21,6 @@ class FormPageAboutRentScooter:
         self.driver.find_element(*order_date).send_keys(text_date)
         self.driver.find_element(*header_about_rent).click()
         self.driver.find_element(*order_days).click()
-        # ждем выпадающего списка дней аренды
         WebDriverWait(self.driver, 3).until(expected_conditions.visibility_of_element_located(days))
         self.driver.find_element(*days).click()
         self.driver.find_element(*color).click()

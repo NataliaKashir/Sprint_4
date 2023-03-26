@@ -18,7 +18,7 @@ class TestAddOrderTopBtnScooter:
         base_page.open_main_page()
         base_page.wait_for_load_main_page()
         main_page.click_top_order_btn()
-        # переменные тестового набора данных заказа
+
         name = order_test_data['name']
         surname = order_test_data['surname']
         address = order_test_data['address']
@@ -39,7 +39,7 @@ class TestAddOrderTopBtnScooter:
         actually_address_value = for_whom.get_for_whom_form_address()
         actually_metro_value = for_whom.get_for_whom_form_metro()
         actually_phone_value = for_whom.get_for_whom_form_phone()
-        # проверяем корректность заполнения полей
+
         assert actually_name_value == name, f'Ожидалось что поле Имя будет содержать {name}, получено {actually_name_value}'
         assert actually_surname_value == surname, f'Ожидалось что поле Фамилия будет содержать {surname}, получено {actually_surname_value}'
         assert actually_address_value == address, f'Ожидалось что поле Адрес будет содержать {address}, получено {actually_address_value}'
@@ -56,13 +56,12 @@ class TestAddOrderTopBtnScooter:
         actually_days_value = about_rent.get_about_rent_form_days()
         actually_color_value = about_rent.get_about_rent_form_color(color_input)
         actually_comment_value = about_rent.get_about_rent_form_comment()
-        # проверяем корректность заполнения полей
+
         assert actually_date_value == text_date, f'Ожидалось что поле Дата будет содержать {text_date}, получено {actually_date_value}'
         assert actually_days_value == text_days, f'Ожидалось что поле Срок аренды будет содержать {text_days}, получено {actually_days_value}'
         assert actually_color_value == True, f'Ожидалось что проверка Цвета будет True, получено {actually_color_value}'
         assert actually_comment_value == comment, f'Ожидалось что поле Комментарий будет содержать {comment}, получено {actually_comment_value}'
 
-        # нажимаем кнопку Заказать формы Про аренду
         about_rent.click_about_rent_form_order_btn()
         about_rent.wait_confirmation_order_window()
         about_rent.click_order_btn_confirm()
