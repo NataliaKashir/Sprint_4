@@ -1,4 +1,5 @@
 import allure
+import time
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 from test_data import *
@@ -17,11 +18,9 @@ class FormPageAboutRentScooter:
         WebDriverWait(self.driver, 10).until(expected_conditions.presence_of_element_located(order_btn_confirm))
 
     @allure.step('Заполняем форму Про аренду')
-    def fill_order_scooter_about_rent_form(self, date, days, color, comment):
-        self.driver.find_element(*order_date).click()
-        # ждем выпадающего меню календаря
-        WebDriverWait(self.driver, 3).until(expected_conditions.visibility_of_element_located(date))
-        self.driver.find_element(*date).click()
+    def fill_order_scooter_about_rent_form(self, text_date, days, color, comment):
+        self.driver.find_element(*order_date).send_keys(text_date)
+        self.driver.find_element(*header_about_rent).click()
         self.driver.find_element(*order_days).click()
         # ждем выпадающего списка дней аренды
         WebDriverWait(self.driver, 3).until(expected_conditions.visibility_of_element_located(days))

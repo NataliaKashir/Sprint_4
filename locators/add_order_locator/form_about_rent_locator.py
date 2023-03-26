@@ -4,9 +4,8 @@ from selenium.webdriver.common.by import By
 
 # поле Когда привезти самокат
 order_date = [By.XPATH, '//*[@placeholder="* Когда привезти самокат"]']
-# поле Когда привезти самокат Всплывающая дата
-order_date_dropdown1 = [By.XPATH, "//*[@aria-label='Choose воскресенье, 2-е апреля 2023 г.']"]
-order_date_dropdown2 = [By.XPATH, "//*[@aria-label='Choose суббота, 1-е апреля 2023 г.']"]
+# Заголовок Про аренду
+header_about_rent = [By.XPATH, "//*[starts-with(text(),'Про аренду')]"]
 # поле Срок аренды
 order_days = [By.XPATH, "//*[starts-with(text(),'* Срок аренды')]"]
 # поле Срок аренды выпадающий список
