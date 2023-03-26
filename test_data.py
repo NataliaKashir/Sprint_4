@@ -30,3 +30,5 @@ class OrderData2:
     comment = "Тестовый комментарий 2"
 
 order_test_data_list = [ OrderData1, OrderData2 ]
+
+ordered_success_str = "Заказ оформлен"

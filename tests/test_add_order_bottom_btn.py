@@ -35,4 +35,4 @@ class TestAddOrderBottomBtnScooter:
         about_rent.wait_for_load_element(order_btn_confirm)
         about_rent.click_order_btn_confirm()
         actually_ordered_header = about_rent.get_ordered_popup_window_header()
-        assert "Заказ оформлен" in actually_ordered_header, f'Ожидалось что окно подтверждения создания заказа будет содержать "Заказ оформлен", получено {actually_ordered_header}'
+        assert ordered_success_str in actually_ordered_header, f'Ожидалось что окно подтверждения создания заказа будет содержать "Заказ оформлен", получено {actually_ordered_header}'
