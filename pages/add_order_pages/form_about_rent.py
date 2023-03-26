@@ -52,11 +52,7 @@ class FormPageAboutRentScooter(BasePageScooter):
 
     @allure.step('Проверяем, что данные в форму Про аренду введены корректно')
     def check_input_data_about_rent_form(self, text_date, color_input, comment, text_days):
-        actually_date_value = self.get_about_rent_form_date()
-        actually_days_value = self.get_about_rent_form_days()
-        actually_color_value = self.get_about_rent_form_color(color_input)
-        actually_comment_value = self.get_about_rent_form_comment()
-        assert actually_date_value == text_date, f'Ожидалось что поле Дата будет содержать {text_date}, получено {actually_date_value}'
-        assert actually_days_value == text_days, f'Ожидалось что поле Срок аренды будет содержать {text_days}, получено {actually_days_value}'
-        assert actually_color_value == True, f'Ожидалось что проверка Цвета будет True, получено {actually_color_value}'
-        assert actually_comment_value == comment, f'Ожидалось что поле Комментарий будет содержать {comment}, получено {actually_comment_value}'
+        assert self.get_about_rent_form_date() == text_date, f'Ожидалось что поле Дата будет содержать {text_date}, получено {self.get_about_rent_form_date()}'
+        assert self.get_about_rent_form_days() == text_days, f'Ожидалось что поле Срок аренды будет содержать {text_days}, получено {self.get_about_rent_form_days()}'
+        assert self.get_about_rent_form_color(color_input) == True, f'Ожидалось что проверка Цвета будет True, получено {self.get_about_rent_form_color(color_input)}'
+        assert self.get_about_rent_form_comment() == comment, f'Ожидалось что поле Комментарий будет содержать {comment}, получено {self.get_about_rent_form_comment()}'

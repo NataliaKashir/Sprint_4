@@ -16,7 +16,7 @@ class FormPageForWhomScooter(BasePageScooter):
         self.driver.find_element(*order_address).send_keys(address)
         self.driver.find_element(*order_phone).send_keys(phone)
         self.driver.find_element(*order_metro).click
-        # не убираю ожидание, но просто send_keys в метро не работают, пока не выберешь элемент.
+        # Не убираю ожидание, но просто send_keys в метро не работают, пока не выберешь элемент.
         # Вынуждена оставить выбор элемента и ожидание, т.к., может быть, причина в моей проблеме с сетью.
         time.sleep(1)
         self.driver.find_element(*order_metro).send_keys(text_metro)
@@ -49,14 +49,9 @@ class FormPageForWhomScooter(BasePageScooter):
 
     @allure.step('Проверяем, что данные в форму Для кого самокат введены корректно')
     def check_input_data_for_whom_form(self, name, surname, address, text_metro, phone):
-        actually_name_value = self.get_for_whom_form_name()
-        actually_surname_value = self.get_for_whom_form_surname()
-        actually_address_value = self.get_for_whom_form_address()
-        actually_metro_value = self.get_for_whom_form_metro()
-        actually_phone_value = self.get_for_whom_form_phone()
-        assert actually_name_value == name, f'Ожидалось что поле Имя будет содержать {name}, получено {actually_name_value}'
-        assert actually_surname_value == surname, f'Ожидалось что поле Фамилия будет содержать {surname}, получено {actually_surname_value}'
-        assert actually_address_value == address, f'Ожидалось что поле Адрес будет содержать {address}, получено {actually_address_value}'
-        assert actually_metro_value == text_metro, f'Ожидалось что поле Метро будет содержать {text_metro}, получено {actually_metro_value}'
-        assert actually_phone_value == phone, f'Ожидалось что поле Телефон будет содержать {phone}, получено {actually_phone_value}'
+        assert self.get_for_whom_form_name() == name, f'Ожидалось что поле Имя будет содержать {name}, получено {self.get_for_whom_form_name()}'
+        assert self.get_for_whom_form_surname() == surname, f'Ожидалось что поле Фамилия будет содержать {surname}, получено {self.get_for_whom_form_surname()}'
+        assert self.get_for_whom_form_address() == address, f'Ожидалось что поле Адрес будет содержать {address}, получено {self.get_for_whom_form_address()}'
+        assert self.get_for_whom_form_metro() == text_metro, f'Ожидалось что поле Метро будет содержать {text_metro}, получено {self.get_for_whom_form_metro()}'
+        assert self.get_for_whom_form_phone() == phone, f'Ожидалось что поле Телефон будет содержать {phone}, получено {self.get_for_whom_form_phone()}'
 

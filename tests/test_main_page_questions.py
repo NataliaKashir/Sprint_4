@@ -33,7 +33,8 @@ class TestMainPageQuestionsScooter:
         question_0_text_result = main_page.get_question_0_text()
         hidden = main_page.get_answer_0_div().get_attribute('hidden')
         assert hidden == None, f'Ожидалось что элемент с ответом 0 будет НЕ скрыт: None, получено "{hidden}"'
-        assert question_0_text_result == self.question_0_text, f'Ожидалось значение ответа на вопрос 0: "{self.question_0_text}", получено "{question_0_text_result}"'
+        assert question_0_text_result == self.question_0_text, \
+            f'Ожидалось значение ответа на вопрос 0: "{self.question_0_text}", получено "{question_0_text_result}"'
 
     @allure.title('Проверка при нажатии на вопрос 1 - открывается соответствующий текст')
     @allure.description('На странице кликаем на вопрос 1, проверяем, что его текст соответсвует ожиданиям и элемент ответа не hidden')
@@ -48,7 +49,8 @@ class TestMainPageQuestionsScooter:
         question_1_text_result = main_page.get_question_1_text()
         hidden = main_page.get_answer_1_div().get_attribute('hidden')
         assert hidden == None, f'Ожидалось что элемент с ответом 1 будет НЕ скрыт: None, получено "{hidden}"'
-        assert question_1_text_result == self.question_1_text, f'Ожидалось значение ответа на вопрос 1: "{self.question_1_text}", получено "{question_1_text_result}"'
+        assert question_1_text_result == self.question_1_text, \
+            f'Ожидалось значение ответа на вопрос 1: "{self.question_1_text}", получено "{question_1_text_result}"'
 
     @allure.title('Проверка при нажатии на вопрос 2 - открывается соответствующий текст')
     @allure.description('На странице кликаем на вопрос 2, проверяем, что его текст соответсвует ожиданиям и элемент ответа не hidden')
@@ -63,7 +65,8 @@ class TestMainPageQuestionsScooter:
         question_2_text_result = main_page.get_question_2_text()
         hidden = main_page.get_answer_2_div().get_attribute('hidden')
         assert hidden == None, f'Ожидалось что элемент с ответом 2 будет НЕ скрыт: None, получено "{hidden}"'
-        assert question_2_text_result == self.question_2_text, f'Ожидалось значение ответа на вопрос 2: "{self.question_2_text}", получено "{question_2_text_result}"'
+        assert question_2_text_result == self.question_2_text, \
+            f'Ожидалось значение ответа на вопрос 2: "{self.question_2_text}", получено "{question_2_text_result}"'
 
     @allure.title('Проверка при нажатии на вопрос 3 - открывается соответствующий текст')
     @allure.description('На странице кликаем на вопрос 3, проверяем, что его текст соответсвует ожиданиям и элемент ответа не hidden')
@@ -78,7 +81,8 @@ class TestMainPageQuestionsScooter:
         question_3_text_result = main_page.get_question_3_text()
         hidden = main_page.get_answer_3_div().get_attribute('hidden')
         assert hidden == None, f'Ожидалось что элемент с ответом 3 будет НЕ скрыт: None, получено "{hidden}"'
-        assert question_3_text_result == self.question_3_text, f'Ожидалось значение ответа на вопрос 3: "{self.question_3_text}", получено "{question_3_text_result}"'
+        assert question_3_text_result == self.question_3_text, \
+            f'Ожидалось значение ответа на вопрос 3: "{self.question_3_text}", получено "{question_3_text_result}"'
 
     @allure.title('Проверка при нажатии на вопрос 4 - открывается соответствующий текст')
     @allure.description('На странице кликаем на вопрос 4, проверяем, что его текст соответсвует ожиданиям и элемент ответа не hidden')
@@ -93,7 +97,8 @@ class TestMainPageQuestionsScooter:
         question_4_text_result = main_page.get_question_4_text()
         hidden = main_page.get_answer_4_div().get_attribute('hidden')
         assert hidden == None, f'Ожидалось что элемент с ответом 4 будет НЕ скрыт: None, получено "{hidden}"'
-        assert question_4_text_result == self.question_4_text, f'Ожидалось значение ответа на вопрос 4: "{self.question_4_text}", получено "{question_4_text_result}"'
+        assert question_4_text_result == self.question_4_text, \
+            f'Ожидалось значение ответа на вопрос 4: "{self.question_4_text}", получено "{question_4_text_result}"'
 
     @allure.title('Проверка при нажатии на вопрос 5 - открывается соответствующий текст')
     @allure.description('На странице кликаем на вопрос 5, проверяем, что его текст соответсвует ожиданиям и элемент ответа не hidden')
@@ -108,7 +113,8 @@ class TestMainPageQuestionsScooter:
         question_5_text_result = main_page.get_question_5_text()
         hidden = main_page.get_answer_5_div().get_attribute('hidden')
         assert hidden == None, f'Ожидалось что элемент с ответом 5 будет НЕ скрыт: None, получено "{hidden}"'
-        assert question_5_text_result == self.question_5_text, f'Ожидалось значение ответа на вопрос 5: "{self.question_5_text}", получено "{question_5_text_result}"'
+        assert question_5_text_result == self.question_5_text, \
+            f'Ожидалось значение ответа на вопрос 5: "{self.question_5_text}", получено "{question_5_text_result}"'
 
     @allure.title('Проверка при нажатии на вопрос 6 - открывается соответствующий текст')
     @allure.description('На странице кликаем на вопрос 6, проверяем, что его текст соответсвует ожиданиям и элемент ответа не hidden')
@@ -123,7 +129,8 @@ class TestMainPageQuestionsScooter:
         question_6_text_result = main_page.get_question_6_text()
         hidden = main_page.get_answer_6_div().get_attribute('hidden')
         assert hidden == None, f'Ожидалось что элемент с ответом 6 будет НЕ скрыт: None, получено "{hidden}"'
-        assert question_6_text_result == self.question_6_text, f'Ожидалось значение ответа на вопрос 6: "{self.question_6_text}", получено "{question_6_text_result}"'
+        assert question_6_text_result == self.question_6_text, \
+            f'Ожидалось значение ответа на вопрос 6: "{self.question_6_text}", получено "{question_6_text_result}"'
 
     @allure.title('Проверка при нажатии на вопрос 7 - открывается соответствующий текст')
     @allure.description('На странице кликаем на вопрос 7, проверяем, что его текст соответсвует ожиданиям и элемент ответа не hidden')
@@ -138,4 +145,5 @@ class TestMainPageQuestionsScooter:
         question_7_text_result = main_page.get_question_7_text()
         hidden = main_page.get_answer_7_div().get_attribute('hidden')
         assert hidden == None, f'Ожидалось что элемент с ответом 7 будет НЕ скрыт: None, получено "{hidden}"'
-        assert question_7_text_result == self.question_7_text, f'Ожидалось значение ответа на вопрос 7: "{self.question_7_text}", получено "{question_7_text_result}"'
+        assert question_7_text_result == self.question_7_text, \
+            f'Ожидалось значение ответа на вопрос 7: "{self.question_7_text}", получено "{question_7_text_result}"'

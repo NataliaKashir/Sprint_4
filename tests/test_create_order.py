@@ -31,7 +31,8 @@ class TestCreateOrder:
         about_rent.wait_for_load_element(order_btn_confirm)
         about_rent.click_order_btn_confirm()
         actually_ordered_header = about_rent.get_ordered_popup_window_header()
-        assert ordered_success_str in actually_ordered_header, f'Ожидалось что окно подтверждения создания заказа будет содержать "{ordered_success_str}", получено {actually_ordered_header}'
+        assert ordered_success_str in actually_ordered_header, \
+            f'Ожидалось что окно подтверждения создания заказа будет содержать "{ordered_success_str}", получено {actually_ordered_header}'
 
     @allure.title('Проверка заказа самоката при нажатии на нижнюю кнопку Заказать главной страницы')
     @allure.description('Заполняем формы оформления заказа для позитивного сценария')
@@ -59,4 +60,5 @@ class TestCreateOrder:
         about_rent.wait_for_load_element(order_btn_confirm)
         about_rent.click_order_btn_confirm()
         actually_ordered_header = about_rent.get_ordered_popup_window_header()
-        assert ordered_success_str in actually_ordered_header, f'Ожидалось что окно подтверждения создания заказа будет содержать "{ordered_success_str}", получено {actually_ordered_header}'
+        assert ordered_success_str in actually_ordered_header, \
+            f'Ожидалось что окно подтверждения создания заказа будет содержать "{ordered_success_str}", получено {actually_ordered_header}'
