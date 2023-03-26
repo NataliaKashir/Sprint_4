@@ -25,7 +25,6 @@ class TestAddOrderBottomBtnScooter:
         metro = order_test_data['metro']
         text_metro = order_test_data['text_metro']
         phone = order_test_data['phone']
-        date = order_test_data['date']
         text_date = order_test_data['text_date']
         days = order_test_data['days']
         text_days = order_test_data['text_days']
@@ -52,7 +51,7 @@ class TestAddOrderBottomBtnScooter:
         about_rent = FormPageAboutRentScooter(driver)
         for_whom.click_order_scooter_for_whom_form_next_btn()
         about_rent.wait_for_load_add_order_about_rent_page()
-        about_rent.fill_order_scooter_about_rent_form(date, days, color, comment)
+        about_rent.fill_order_scooter_about_rent_form(text_date, days, color, comment)
 
         actually_date_value = about_rent.get_about_rent_form_date()
         actually_days_value = about_rent.get_about_rent_form_days()
